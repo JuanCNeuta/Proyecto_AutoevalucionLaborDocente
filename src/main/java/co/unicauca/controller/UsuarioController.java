@@ -2,11 +2,9 @@ package co.unicauca.controller;
 
 import co.unicauca.model.Usuario;
 import co.unicauca.repository.UsuarioRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 public class UsuarioController {
@@ -23,11 +21,6 @@ public class UsuarioController {
     @GetMapping({"/usuarios"})
     public Iterable<Usuario> obtenerUsuarios(Model model) {
         return usuarioRepository.findAll();
-    }
-
-    @GetMapping("/usuarios")
-    public List<Usuario> obtenerUsuariosPorRol(@RequestParam("rol") String rol) {
-        return usuarioRepository.findAllByRol(rol);
     }
 
     @GetMapping("/{id}")

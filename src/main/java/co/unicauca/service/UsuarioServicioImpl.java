@@ -22,8 +22,4 @@ public class UsuarioServicioImpl implements UsuarioServicioInt {
 	public Usuario obtenerUsuarioPorID(Long id) {
 		return usuarioRepo.findById(id).get();
 	}
-
-	public List<Usuario> obtenerUsuariosPorRol(String rol) {
-        return usuarioRepo.findAllByRol(rol);
-    }
 }
